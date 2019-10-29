@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import store from './stores';
-import App from './components/App';
+import store from './app/stores';
+import RecipesApp from  './app/containers/RecipesApp';
+import Header from './app/components/Header';
 
 // prepare Theme
 const theme = createMuiTheme({
@@ -26,15 +27,16 @@ const theme = createMuiTheme({
     }
 });
 ReactDOM.render(
-    <BrowserRouter>
-        <Fragment>
-            <Provider store={store}>
-                <MuiThemeProvider theme={theme}>
-                    <CssBaseline />
-                    <App />
-                </MuiThemeProvider>
-            </Provider>
-        </Fragment>
-    </BrowserRouter>,
+    <Provider store={store}>
+        <MuiThemeProvider theme={theme}>
+            <CssBaseline />
+            <Header />
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={RecipesApp} />
+                </Switch>
+            </Router>
+        </MuiThemeProvider>
+    </Provider>,
     document.getElementById('root')
 );

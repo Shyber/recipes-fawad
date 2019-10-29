@@ -5,18 +5,15 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { connect } from 'react-redux';
-import {fetchRecipes} from '../actions/RecipeActions';
+import { fetchRecipes } from '../../actions/RecipeActions';
+import RecipeGalleryMain from '../../components/RecipeGalleryMain';
 
-import Header from './Header';
-import RecipeGalleryMain from './RecipeGalleryMain';
-
-class App extends React.Component{
+class RecipesApp extends React.Component{
     
     render(){
         const {dispatchFetchRecipes} = this.props;
         return (
             <main>
-                <Header />
                 <div >
                     <Container maxWidth="sm">
                         <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom style={{paddingTop:10}}>
@@ -52,4 +49,4 @@ const mapDispatchToProps = (dispatch) => ({
     }
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(mapStateToProps,mapDispatchToProps)(RecipesApp);
