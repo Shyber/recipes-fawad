@@ -44,7 +44,7 @@ Commands:
             * containers                *Larger Smart Components/Container Root folder. Similar heirarchy as above component*
             * reducers                  *Root reducers folder (index.js export individual reducers)*
             * services                  *Root services folder*
-                * transforms            *Folder for storing json/data transforms on the data retrieved by services
+                * transforms            *Folder for storing json/data transforms on the data retrieved by services*
             * stores                    *Stores folder*
 
 
