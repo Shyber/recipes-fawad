@@ -65,7 +65,8 @@ I'd use its componentDidMount method to dispatch the fetch action.
 * I haven't given much thought to routing, the hamburger icon can be used to navigate to other areas of the site like contact or about us, that will have their own routes (as shown in commented out code).
 * I would've used an ID based routing to open up a particular recipe in detail view, for direct share etc.
 
-
+## Tests
+This was a priority, I'm aware but I wanted to get to it after everything else was in order. I've got it structured in my mind about how I'll do it - Unit Tests for each components with fake props, then units tests for the reducers, then a test with simulates loaded data. But this boiler plate isn't playing nice. It's not able to parse the react components and I probably need to revisit webpack and babel to see how to get the ES6 React components visible to Jest/Enzyme. 
 
 
 
