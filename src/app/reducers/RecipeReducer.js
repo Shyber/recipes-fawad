@@ -1,6 +1,6 @@
 import {REQUEST_RECIPE,RECEIVE_RECIPE} from '../constants/ActionConstants';
 
-const RecipeReducer = (state = { bLoading:false , recipes : { contents : [] } }, action) => {
+const RecipeReducer = (state = { bLoading:false , recipes : [] }, action) => {
     switch(action.type){
     case REQUEST_RECIPE:
         return {

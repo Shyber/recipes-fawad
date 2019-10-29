@@ -34,6 +34,10 @@ ReactDOM.render(
             <Router>
                 <Switch>
                     <Route exact path="/" component={RecipesApp} />
+                    {/* <Route exact path="/recipe" component={RecipeDetail} />
+                    <Route exact  path="/recipe/:id" component={RecipeDetail} />
+                    <Route exact path="/About" component={AboutUsPage} />
+                    <Route exact path="/Contact" component={ContactUsPage} /> */}
                 </Switch>
             </Router>
         </MuiThemeProvider>

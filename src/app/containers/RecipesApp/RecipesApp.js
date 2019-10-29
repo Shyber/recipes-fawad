@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { connect } from 'react-redux';
 import { fetchRecipes } from '../../actions/RecipeActions';
-import RecipeGalleryMain from '../../components/RecipeGalleryMain';
+import RecipeGalleryMain from '../RecipeGalleryMain';
 
 class RecipesApp extends React.Component{
     

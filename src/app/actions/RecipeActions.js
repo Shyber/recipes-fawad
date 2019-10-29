@@ -1,6 +1,5 @@
 import {REQUEST_RECIPE,RECEIVE_RECIPE} from '../constants/ActionConstants';
-import RecipeApi from '../services/RecipeApi';
-import recipesMockData from '../../../data/recipesMockData';
+import RecipeService from '../services/RecipeService';
 
 function requestRecipes(_loading){
     return {
@@ -19,14 +18,14 @@ function receiveRecipes(inputJson){
 export function fetchRecipes(){
     return(dispatch) => {
         dispatch(requestRecipes(true));
-        // api call
-        RecipeApi.getRecipes()
+        RecipeService.getAllRecipes()
             .then((response) => {
-                return recipesMockData;
-            // return response.json();
+                dispatch(receiveRecipes(response));
             })
-            .then((findresponse)=> {
-                dispatch(receiveRecipes(findresponse));
+            .catch(error =>{
+                console.warn(`fetchRecipes error: ${error}`);
+            })
+            .finally(()=> {
                 dispatch(requestRecipes(false));
             });
     };

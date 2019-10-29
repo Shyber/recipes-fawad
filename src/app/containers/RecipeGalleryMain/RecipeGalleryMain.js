@@ -18,12 +18,12 @@ class RecipeGalleryMain extends React.Component{
                 <Grid container spacing={4}>
                     {
                         recipes.bLoading? <div style={{ width: '100%', padding: '5%', display: 'flex', justifyContent: 'space-evenly' }}><CircularProgress size={60} /></div> :
-                            recipes.recipes.contents.map(recipe => (
-                                <Grid item key={recipe.contentId} xs={12} sm={6} md={4}>
+                            recipes.recipes.map(recipe => (
+                                <Grid item key={recipe.id} xs={12} sm={6} md={4}>
                                     <Card >
                                         <CardMedia
                                             style={{ paddingTop: '56.25%'}}
-                                            image={recipe.imageList.landscape32small1x.url}
+                                            image={recipe.imageUrl}
                                             title={recipe.title}
                                         />
                                         <CardContent >

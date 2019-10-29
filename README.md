@@ -44,14 +44,26 @@ Commands:
             * containers                *Larger Smart Components/Container Root folder. Similar heirarchy as above component*
             * reducers                  *Root reducers folder (index.js export individual reducers)*
             * services                  *Root services folder*
+                * transforms            *Folder for storing json/data transforms on the data retrieved by services
             * stores                    *Stores folder*
 
 
 # Change Log
 
 29th October 2019 Updates:
-- I've uploaded the source code to a temp Github account
-- I'll be making all commits directly to master instead of a dev branch and then merge at end.
+* I've uploaded the source code to a temp Github account
+* I'll be making all commits directly to master instead of a dev branch and then merge at end.
+* Small disclaimer, I apologize for skipping the PDF *again* and started working off the points in the email response. 
+
+## What I would've done next
+* I left RecipeGalleryMain as a component instead of a pure function so that instead of the load recipes button loading data,
+I'd use its componentDidMount method to dispatch the fetch action. 
+* Change how the mockup data is loaded, possibly use [JSON-Server](https://github.com/typicode/json-server). For now, I haven't changed it much, just got it out of the src folder.
+* Used more try-catches and corner case handling.
+
+## Other points
+* I haven't given much thought to routing, the hamburger icon can be used to navigate to other areas of the site like contact or about us, that will have their own routes (as shown in commented out code).
+* I would've used an ID based routing to open up a particular recipe in detail view, for direct share etc.
 
 
 
