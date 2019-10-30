@@ -63,6 +63,8 @@ Commands:
 
 ## Tests
 * I've added some pretty basic component tests. If I had more time, I would've expanded upon click/load action of the button and fake actions.
+* I've included an actions unit test.
+* I've included a reducer unit test.
 
 ## What I would've done next
 * I left RecipeGalleryMain as a component instead of a pure function so that instead of the load recipes button loading data,
