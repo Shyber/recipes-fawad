@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import store from './app/stores';
-import RecipesApp from  './app/containers/RecipesApp';
+import { RecipesApp } from  './app/containers/RecipesApp';
 import Header from './app/components/Header';
 
 // prepare Theme

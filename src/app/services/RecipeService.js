@@ -4,8 +4,16 @@ import recipesMockData from '../../../data/recipesMockData';
 
 export default class RecipeService {   
     static getAllRecipes() {
-        // const uri = `${API_BASE_ADDRESS  }/recipes`;
-        // return fetch(uri, {method: 'GET'});
+        // const uri = `../../../recipes.json`;
+        // return fetch(uri, {method: 'GET'})
+        // .then(response => {
+        //     return response.json();
+        // }).then(jsonData => {
+        //     return RecipeTransform.transformRecipes(jsonData);
+        // }).catch(error => {
+        //     console.warn(`getAllRecipes error: ${error}`);
+        // });
+
         const promise1 = new Promise((resolve, reject) => {
             setTimeout(() => {
                 try{

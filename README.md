@@ -30,6 +30,9 @@ Commands:
 * Root                                  *Root Directory*
     * config                            *All configurations (eg Webpack, Jest, etc) go here in their own subfolders*
     * tests                             *Root Directory for all tests*
+        * components_tests              *Directory for unit tests for components/containers
+        * actions_tests                 *Directory for unit tests for actions
+        * reducers_tests                *Directory for unit tests for reducers
     * src                               *Root Directory for app source*
         * *index.html*                  *Main landing page*
         * *index.js*                    *App entry point*
@@ -55,6 +58,12 @@ Commands:
 * I'll be making all commits directly to master instead of a dev branch and then merge at end.
 * Small disclaimer, I apologize for skipping the PDF *again* and started working off the points in the email response. 
 
+30th October 2019 Updates:
+* I was going to skip writing tests again, but decided to give it a bit more time and write some basic tests.
+
+## Tests
+* I've added some pretty basic component tests. If I had more time, I would've expanded upon click/load action of the button and fake actions.
+
 ## What I would've done next
 * I left RecipeGalleryMain as a component instead of a pure function so that instead of the load recipes button loading data,
 I'd use its componentDidMount method to dispatch the fetch action. 
@@ -65,8 +74,7 @@ I'd use its componentDidMount method to dispatch the fetch action.
 * I haven't given much thought to routing, the hamburger icon can be used to navigate to other areas of the site like contact or about us, that will have their own routes (as shown in commented out code).
 * I would've used an ID based routing to open up a particular recipe in detail view, for direct share etc.
 
-## Tests
-This was a priority, I'm aware but I wanted to get to it after everything else was in order. I've got it structured in my mind about how I'll do it - Unit Tests for each components with fake props, then units tests for the reducers, then a test with simulates loaded data. But this boiler plate isn't playing nice. It's not able to parse the react components and I probably need to revisit webpack and babel to see how to get the ES6 React components visible to Jest/Enzyme. 
+
 
 
 

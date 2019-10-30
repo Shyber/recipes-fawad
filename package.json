@@ -1,6 +1,6 @@
 {
   "name": "recipes-fawad",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Loup React-Redux Demo by Fawad",
   "main": "src/index.js",
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "eslint ./src/**/**.js",
     "lint:fix": "eslint ./src/**/**.js --fix",
     "test": "jest",
+    "test:debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand",
     "test:watch": "yarn run test --watch",
     "test:cover": "yarn run test --coverage",
     "precommit": "yarn run lint && yarn test",
@@ -38,6 +39,7 @@
     "core-js": "3",
     "css-loader": "^2.1.0",
     "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^5.12.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
@@ -87,6 +89,9 @@
     ],
     "transform": {
       "^.+\\.js$": "babel-jest"
-    }
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/config/tests/enzyme.setup.js"
+    ]
   }
 }

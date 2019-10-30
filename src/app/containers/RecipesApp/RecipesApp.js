@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -6,9 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { connect } from 'react-redux';
 import { fetchRecipes } from '../../actions/RecipeActions';
-import RecipeGalleryMain from '../RecipeGalleryMain';
+import { RecipeGalleryMain } from '../RecipeGalleryMain';
 
-class RecipesApp extends React.Component{
+export class RecipesApp extends React.Component{
     
     render(){
         const {dispatchFetchRecipes} = this.props;
@@ -16,12 +15,9 @@ class RecipesApp extends React.Component{
             <main>
                 <div >
                     <Container maxWidth="sm">
-                        <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom style={{paddingTop:10}}>
-              Recipe Gallery
+                        <Typography component="h1" variant="h3" align="center" color="textPrimary" gutterBottom style={{paddingTop:10}}>Recipe Gallery
                         </Typography>
-                        <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              |React|Redux|Thunk|MaterialUI|
-                        </Typography>
+                        <Typography variant="h5" align="center" color="textSecondary" paragraph>|React|Redux|Thunk|MaterialUI|</Typography>
                         <div >
                             <Grid container spacing={2} justify="center">
                                 <Grid item>

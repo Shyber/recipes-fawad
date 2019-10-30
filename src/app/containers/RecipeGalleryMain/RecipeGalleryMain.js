@@ -9,7 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { connect } from 'react-redux';
 
-class RecipeGalleryMain extends React.Component{
+export class RecipeGalleryMain extends React.Component{
 
     render() {
         const {recipes} = this.props;
@@ -29,9 +29,6 @@ class RecipeGalleryMain extends React.Component{
                                         <CardContent >
                                             <Typography gutterBottom variant="h5" component="h2">
                                                 {recipe.title}
-                                            </Typography>
-                                            <Typography>
-                   Recipe Description
                                             </Typography>
                                         </CardContent>
                                     </Card>
