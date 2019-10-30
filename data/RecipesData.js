@@ -694,4 +694,15 @@ const recipesMockData = {
         }
     ]
 };
-export default recipesMockData;
+
+export default class RecipesData{
+    static recipesMockDataObject(){
+        return recipesMockData;
+    }
+
+    static recipesMockResponse(){
+        var blob = new Blob([JSON.stringify(recipesMockData, null, 2)], {type : 'application/json'});
+        var status = { "status" : 200 , "statusText" : "Ok" };
+        return new Response(blob, status);
+    }
+}

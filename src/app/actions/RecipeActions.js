@@ -25,14 +25,13 @@ function receiveRecipes(_recipes){
 export function fetchRecipes(){
     return(dispatch) => {
         dispatch(requestRecipes(true));
-        RecipeService.getAllRecipes()
+        return RecipeService.getAllRecipes()
             .then((response) => {
                 dispatch(receiveRecipes(response));
+                dispatch(requestRecipes(false));
             })
             .catch(error =>{
                 console.warn(`fetchRecipes error: ${error}`);
-            })
-            .finally(()=> {
                 dispatch(requestRecipes(false));
             });
     };
@@ -44,11 +43,10 @@ export function fetchRecipesById(recipeId){
         RecipeService.getRecipe(recipeId)
             .then((response) => {
                 dispatch(receiveRecipe(response));
+                dispatch(requestRecipes(false));
             })
             .catch(error =>{
                 console.warn(`fetchRecipesById error: ${error}`);
-            })
-            .finally(()=> {
                 dispatch(requestRecipes(false));
             });
     };

@@ -1,43 +1,40 @@
 
 import RecipeTransform from './transforms/RecipeTransform';
-import recipesMockData from '../../../data/recipesMockData';
+import RecipesData from '../../../data/RecipesData';
+
+// To include the json file to webpack loader
+import '../../../data/recipes.json';
 
 export default class RecipeService {   
     static getAllRecipes() {
-        // const uri = `../../../recipes.json`;
-        // return fetch(uri, {method: 'GET'})
-        // .then(response => {
-        //     return response.json();
-        // }).then(jsonData => {
-        //     return RecipeTransform.transformRecipes(jsonData);
-        // }).catch(error => {
-        //     console.warn(`getAllRecipes error: ${error}`);
-        // });
-
-        const promise1 = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                try{
-                    resolve(RecipeTransform.transformRecipes(recipesMockData));
-                }catch(error){
-                    reject(error);
-                }
-            }, 300);
-        });
-        return promise1;
+        // Try to get a static json file (wouldn't work till served)
+        const uri = `../../../data/recipes.json`;
+        return fetch(uri, {method: 'GET'})
+            .then(response => {
+                if(response===null || response.ok===false)
+                    return RecipesData.recipesMockResponse().json();
+                return response.json();
+            }).then(jsonData => {
+                return RecipeTransform.transformRecipes(jsonData);
+            }).catch(error => {
+                console.warn(`getAllRecipes error: ${error}`);
+                return RecipeTransform.transformRecipes(null);
+            });
     }
 
     static getRecipe(recipeId) {
-        // const uri = `${API_BASE_ADDRESS  }/recipes/${recipeId}`;
-        // return fetch(uri, {method: 'GET'});
-        const promise1 = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                try{
-                    resolve(RecipeTransform.filterAndTransformRecipe(recipeId,recipesMockData));
-                }catch(error){
-                    reject(error);
-                }
-            }, 300);
-        });
-        return promise1;
+        // Try to get a static json file (wouldn't work till served)
+        const uri = `../../../data/recipes.json`;
+        return fetch(uri, {method: 'GET'})
+            .then(response => {
+                if(response===null || response.ok===false)
+                    return RecipesData.recipesMockResponse().json();
+                return response.json();
+            }).then(jsonData => {
+                return RecipeTransform.filterAndTransformRecipe(recipeId,jsonData);
+            }).catch(error => {
+                console.warn(`getAllRecipes error: ${error}`);
+                return RecipeTransform.filterAndTransformRecipe(recipeId,null);
+            });
     }
 }
