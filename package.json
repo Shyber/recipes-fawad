@@ -11,9 +11,7 @@
     "test": "jest",
     "test:debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand",
     "test:watch": "yarn run test --watch",
-    "test:cover": "yarn run test --coverage",
-    "precommit": "yarn run lint && yarn test",
-    "prepush": "yarn run lint"
+    "test:cover": "yarn run test --coverage"
   },
   "author": "Fawad Ahmed",
   "license": "Free",
@@ -59,6 +57,7 @@
     "jest-dom": "^3.0.1",
     "node-sass": "^4.10.0",
     "postcss-loader": "^3.0.0",
+    "prop-types": "^15.7.2",
     "prettier": "^1.16.1",
     "react-testing-library": "^7.0.1",
     "redux-logger": "^3.0.6",
@@ -95,5 +94,11 @@
     "setupFilesAfterEnv": [
       "<rootDir>/config/tests/enzyme.setup.js"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint && yarn test",
+      "pre-push": "yarn run lint"
+    }
   }
 }

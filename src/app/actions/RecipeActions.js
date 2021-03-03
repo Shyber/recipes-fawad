@@ -31,6 +31,7 @@ export function fetchRecipes(){
                 dispatch(requestRecipes(false));
             })
             .catch(error =>{
+                // eslint-disable-next-line no-console
                 console.warn(`fetchRecipes error: ${error}`);
                 dispatch(requestRecipes(false));
             });
@@ -46,6 +47,7 @@ export function fetchRecipesById(recipeId){
                 dispatch(requestRecipes(false));
             })
             .catch(error =>{
+                // eslint-disable-next-line no-console
                 console.warn(`fetchRecipesById error: ${error}`);
                 dispatch(requestRecipes(false));
             });

@@ -17,6 +17,7 @@ export default class RecipeService {
             }).then(jsonData => {
                 return RecipeTransform.transformRecipes(jsonData);
             }).catch(error => {
+                // eslint-disable-next-line no-console
                 console.warn(`getAllRecipes error: ${error}`);
                 return RecipeTransform.transformRecipes(null);
             });
@@ -33,6 +34,7 @@ export default class RecipeService {
             }).then(jsonData => {
                 return RecipeTransform.filterAndTransformRecipe(recipeId,jsonData);
             }).catch(error => {
+                // eslint-disable-next-line no-console
                 console.warn(`getAllRecipes error: ${error}`);
                 return RecipeTransform.filterAndTransformRecipe(recipeId,null);
             });
