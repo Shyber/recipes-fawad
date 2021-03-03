@@ -38,6 +38,7 @@ Commands:
         * *index.js*                    *App entry point*
         * App                           *Application Code Folder*
             * actions                   *Root folder for redux actions*
+            * providers                 *Custom hooks for the app
             * components                *Root folder for UI/Dumb Components*
                 * COMPONENT1            *Sample Component (each component will have its own folder)*
                     * *COMPONENT1*.js   *The component implementation JS/JSX file*
@@ -52,11 +53,14 @@ Commands:
 
 
 # Change Log
+3rd March 2020 Updates:
+* Replaced class components with functional. 
+* Put in a sample hook to show feedback using modals/dialogs/drawers
+* Some husky config updates
 
 29th October 2019 Updates:
 * I've uploaded the source code to a temp Github account
 * I'll be making all commits directly to master instead of a dev branch and then merge at end.
-* Small disclaimer, I apologize for skipping the PDF *again* and started working off the points in the email response. 
 
 30th October 2019 Updates:
 * I was going to skip writing tests again, but decided to give it a bit more time and write some basic tests.
@@ -65,12 +69,6 @@ Commands:
 * I've added some pretty basic component tests. If I had more time, I would've expanded upon click/load action of the button and fake actions.
 * I've included an actions unit test.
 * I've included a reducer unit test.
-
-## What I would've done next
-* I left RecipeGalleryMain as a component instead of a pure function so that instead of the load recipes button loading data,
-I'd use its componentDidMount method to dispatch the fetch action. 
-* Change how the mockup data is loaded, possibly use [JSON-Server](https://github.com/typicode/json-server). For now, I haven't changed it much, just got it out of the src folder.
-* Used more try-catches and corner case handling.
 
 ## Other points
 * I haven't given much thought to routing, the hamburger icon can be used to navigate to other areas of the site like contact or about us, that will have their own routes (as shown in commented out code).

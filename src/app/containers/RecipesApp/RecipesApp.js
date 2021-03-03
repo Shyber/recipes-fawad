@@ -7,9 +7,11 @@ import Container from '@material-ui/core/Container';
 import { connect } from 'react-redux';
 import { fetchRecipes } from '../../actions/RecipeActions';
 import { RecipeGalleryMain } from '../RecipeGalleryMain';
+import useFeedback from '../../providers/FeedbackHook';
 
 export const RecipesApp = ({ dispatchFetchRecipes }) => {
     const [isLoading, setIsloading] = useState(false);
+    const { showSnackbar } = useFeedback() || {};
 
     const clickHandler = () => {
         setIsloading(true);
@@ -18,7 +20,7 @@ export const RecipesApp = ({ dispatchFetchRecipes }) => {
             setIsloading(false);
             dispatchFetchRecipes();
         }, 1500 );
-    }
+    };
     return (
         <main>
             <div >
@@ -31,6 +33,12 @@ export const RecipesApp = ({ dispatchFetchRecipes }) => {
                             <Grid item>
                                 <Button variant="contained" color="primary" onClick={clickHandler}>
                     Load Recipes
+                  
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button variant="contained" color="primary" onClick={() => showSnackbar && showSnackbar('Hey look, a toast!')}>
+                    Show a toast
                                 </Button>
                             </Grid>
                         </Grid>

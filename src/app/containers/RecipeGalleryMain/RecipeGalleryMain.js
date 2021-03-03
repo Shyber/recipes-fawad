@@ -44,7 +44,7 @@ RecipeGalleryMain.defaultProps = {
 
 RecipeGalleryMain.propTypes = {
     // cheating on the prop type but too lazy to define a shape
-    recipes: PropTypes.objectOf(PropTypes.any),
+    recipes: PropTypes.any,
     isLoading: PropTypes.bool
 };
 

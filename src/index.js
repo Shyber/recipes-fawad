@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { FeedbackProvider } from './app/providers/FeedbackContext';
 import store from './app/stores';
 import { RecipesApp } from  './app/containers/RecipesApp';
 import Header from './app/components/Header';
@@ -30,16 +31,18 @@ ReactDOM.render(
     <Provider store={store}>
         <MuiThemeProvider theme={theme}>
             <CssBaseline />
-            <Header />
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={RecipesApp} />
-                    {/* <Route exact path="/recipe" component={RecipeDetail} />
+            <FeedbackProvider>
+                <Header />
+                <Router>
+                    <Switch>
+                        <Route exact path="/" component={RecipesApp} />
+                        {/* <Route exact path="/recipe" component={RecipeDetail} />
                     <Route exact  path="/recipe/:id" component={RecipeDetail} />
                     <Route exact path="/About" component={AboutUsPage} />
                     <Route exact path="/Contact" component={ContactUsPage} /> */}
-                </Switch>
-            </Router>
+                    </Switch>
+                </Router>
+            </FeedbackProvider>
         </MuiThemeProvider>
     </Provider>,
     document.getElementById('root')

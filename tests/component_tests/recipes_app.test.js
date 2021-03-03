@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { RecipesAppContainer } from '../../src/app/containers/RecipesApp';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { RecipesAppContainer } from '../../src/app/containers/RecipesApp';
 
 function recipeAppShallowSetup() {
     // Sample props to pass to our shallow render
@@ -24,7 +24,7 @@ describe('Enzyme Shallow Render of RecipesApp', () => {
         // Setup wrapper and assign props.
         const { enzymeRecipeAppWrapper, props } = recipeAppShallowSetup();
 
-        //We check if the button is there
+        // We check if the button is there
         expect(
             enzymeRecipeAppWrapper
                 .find(Button)
@@ -32,7 +32,7 @@ describe('Enzyme Shallow Render of RecipesApp', () => {
                 .text()
         ).toBe("Load Recipes");
 
-        //And the title
+        // And the title
         expect(
             enzymeRecipeAppWrapper
                 .find(Typography)
