@@ -9,7 +9,7 @@ describe('recipes reducer', () => {
     });
   
     const transformedJson = RecipeTransform.transformRecipes(RecipesData.recipesMockDataObject());
-    const loadedState = {recipes:  transformedJson, bLoading:true};
+    const loadedState = {recipes:  transformedJson, bLoading:true, filter: ''};
 
     it('should handle REQUEST_RECIPES', () => {
         expect(
@@ -19,6 +19,7 @@ describe('recipes reducer', () => {
             })
         ).toEqual({
             recipes: [],
+            filter: '',
             bLoading: true
         });
 
@@ -29,11 +30,12 @@ describe('recipes reducer', () => {
             })
         ).toEqual({
             recipes: transformedJson,
+            filter: '',
             bLoading: false
         });
     });
 
-    const loadingState = {recipes:  [], bLoading:true};
+    const loadingState = {recipes:  [], bLoading:true, filter: ''};
     it('should handle RECEIVE_RECIPES', () => {
         expect(
             RecipeReducer(loadingState, {
@@ -42,6 +44,21 @@ describe('recipes reducer', () => {
             })
         ).toEqual({
             recipes: transformedJson,
+            filter: '',
+            bLoading: true
+        });
+    });
+
+    it('should handle FILTER_RECIPES', () => {
+        const searchTerm = 'search term';
+        expect(
+            RecipeReducer(loadingState, {
+                type: types.FILTER_RECIPES,
+                filter: searchTerm
+            })
+        ).toEqual({
+            recipes: [],
+            filter: searchTerm,
             bLoading: true
         });
     });

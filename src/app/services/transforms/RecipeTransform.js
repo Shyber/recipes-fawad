@@ -5,7 +5,8 @@ export default class RecipeTransform{
             return rawData.contents.map(x => ({ 
                 id: x.contentId,
                 title: x.title,
-                imageUrl: x.imageList.landscape32small1x.url
+                imageUrl: x.imageList.landscape32small1x.url,
+                tags: x.tags.map( tag => tag.name).join(', ')
             }) );
         }catch(err){
             console.warn(`transformRecipes error: ${err}`);

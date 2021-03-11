@@ -1,8 +1,9 @@
-import {REQUEST_RECIPES,RECEIVE_RECIPE,RECEIVE_RECIPES} from '../constants/ActionConstants';
+import {REQUEST_RECIPES,RECEIVE_RECIPE,RECEIVE_RECIPES,FILTER_RECIPES} from '../constants/ActionConstants';
 
 export const initialState = {
     recipes: [],
     bLoading: false,
+    filter: ``
 };
 
 const RecipeReducer = (state = initialState, action) => {
@@ -22,6 +23,11 @@ const RecipeReducer = (state = initialState, action) => {
             return  {
                 ...state,
                 recipe : action.recipe
+            };
+        case FILTER_RECIPES:
+            return  {
+                ...state,
+                filter : action.filter
             };
         default:
             return state;

@@ -1,29 +1,27 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { RecipeGalleryMainComponent } from '../../src/app/containers/RecipeGalleryMain';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
+import { RecipeGalleryMainComponent } from '../../src/app/containers/RecipeGalleryMain';
 
 function recipeGalleryShallowSetup() {
     // Sample props to pass to our shallow render
     const props = {
-        recipes: {
-            recipes: [
-                {
-                    id: '2342342',
-                    title: 'Sample 1',
-                    imageUrl:
+        recipes: [
+            {
+                id: '2342342',
+                title: 'Sample 1',
+                imageUrl:
                         'https://4.img-dpreview.com/files/p/TS1200x900~sample_galleries/1330372094/7004100121.jpg'
-                },
-                {
-                    id: '1232111',
-                    title: 'Sample 2',
-                    imageUrl:
+            },
+            {
+                id: '1232111',
+                title: 'Sample 2',
+                imageUrl:
                         'https://2.img-dpreview.com/files/p/TS1200x900~sample_galleries/1330372094/0024739717.jpg'
-                }
-            ]
-        },
-
+            }
+        ]
+        ,
         bLoading: false
     };
     // wrapper instance around rendered output
@@ -40,18 +38,18 @@ describe('Enzyme Shallow Render of RecipeGalleryMain', () => {
         // Setup wrapper and assign props.
         const { enzymeGalleryWrapper, props } = recipeGalleryShallowSetup();
 
-        //Our fake props had two recipe items, making sure that's rendered correctly
+        // Our fake props had two recipe items, making sure that's rendered correctly
 
-        //Gallery Item 1
-        //Check title
+        // Gallery Item 1
+        // Check title
         expect(
             enzymeGalleryWrapper
                 .find(Card)
                 .first()
                 .childAt(1)
                 .text()
-        ).toBe(props.recipes.recipes[0].title);
-        //Check image
+        ).toBe(props.recipes[0].title);
+        // Check image
         expect(
             enzymeGalleryWrapper
                 .find(CardMedia)
@@ -59,19 +57,18 @@ describe('Enzyme Shallow Render of RecipeGalleryMain', () => {
                 .getElement(0)
                 .props
                 .image
-        ).toBe(props.recipes.recipes[0].imageUrl);
+        ).toBe(props.recipes[0].imageUrl);
 
-
-        //Gallery Item 2
-        //Check title
+        // Gallery Item 2
+        // Check title
         expect(
             enzymeGalleryWrapper
                 .find(Card)
                 .last()
                 .childAt(1)
                 .text()
-        ).toBe(props.recipes.recipes[1].title);
-        //Check image
+        ).toBe(props.recipes[1].title);
+        // Check image
         expect(
             enzymeGalleryWrapper
                 .find(CardMedia)
@@ -79,6 +76,6 @@ describe('Enzyme Shallow Render of RecipeGalleryMain', () => {
                 .getElement(0)
                 .props
                 .image
-        ).toBe(props.recipes.recipes[1].imageUrl);
+        ).toBe(props.recipes[1].imageUrl);
     });
 });

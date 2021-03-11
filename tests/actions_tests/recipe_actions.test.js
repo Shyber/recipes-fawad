@@ -43,4 +43,17 @@ describe('async recipe actions', () => {
                 expect(store.getActions()).toEqual(expectedActions);
             });
     });
+
+    it('creates FILTER_RECIPES when filtering recipes is called', () => {
+        const searchTerm = 'Search term';
+        const expectedAction = 
+            [{ 
+                type: types.FILTER_RECIPES,
+                filter : searchTerm
+            }];
+        const store = mockStore({ bLoading:false , recipes : [], filter : '' });
+
+        store.dispatch(actions.filterRecipes(searchTerm));
+        expect(store.getActions()).toEqual(expectedAction);
+    });
 });

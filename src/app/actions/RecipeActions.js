@@ -1,4 +1,4 @@
-import {REQUEST_RECIPES,RECEIVE_RECIPE,RECEIVE_RECIPES} from '../constants/ActionConstants';
+import {REQUEST_RECIPES,RECEIVE_RECIPE,RECEIVE_RECIPES, FILTER_RECIPES} from '../constants/ActionConstants';
 import RecipeService from '../services/RecipeService';
 
 function requestRecipes(_loading){
@@ -53,3 +53,10 @@ export function fetchRecipesById(recipeId){
             });
     };
 } 
+
+export function filterRecipes(searchTerms){
+    return {
+        type: FILTER_RECIPES,
+        filter : searchTerms,
+    };
+}
