@@ -53,17 +53,22 @@ Commands:
 
 
 # Change Log
-3rd March 2020 Updates:
+11th March 2021 Updates:
+* Filtering feature added which accepts comma separated terms (using OR logic) to filter the list.
+* Updated reducers/actions/tests for this feature. 
+
+3rd March 2021 Updates:
 * Replaced class components with functional. 
 * Put in a sample hook to show feedback using modals/dialogs/drawers
 * Some husky config updates
+
+30th October 2019 Updates:
+* I was going to skip writing tests again, but decided to give it a bit more time and write some basic tests.
 
 29th October 2019 Updates:
 * I've uploaded the source code to a temp Github account
 * I'll be making all commits directly to master instead of a dev branch and then merge at end.
 
-30th October 2019 Updates:
-* I was going to skip writing tests again, but decided to give it a bit more time and write some basic tests.
 
 ## Tests
 * I've added some pretty basic component tests. If I had more time, I would've expanded upon click/load action of the button and fake actions.
